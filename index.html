@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bill Splitter</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+		<meta name="theme-color" content="#E07A5F">
+	</head>
+
+	<body>
+		<main class="container">
+	
+			<header class="app-header">
+				<h1>Bill Splitter</h1>
+				<p>Tired of the awful bill split after a hangout? Don't worry! 
+               		With this app, you can split the whole bill equitably.
+				</p>
+			</header>
+
+			<section id="input-section">
+				<form id="splitter-form">
+					<div class="input-form">
+						<label for="total-bill">Total bill:</label>
+						<input id="total-bill" type="number" min="0" placeholder="Enter total" required step="0.01">
+						<span class="error-msg" id="error-bill"></span>
+					</div>
+					
+					<div class="input-form">
+						<label for="num-people">Number of people:</label>
+						<input id="num-people" type="number" min="1" placeholder="Enter number of people" required step="1">
+						<span class="error-msg" id="error-people"></span>
+					</div>
+
+					<div class="input-form">
+						<label for="tip-percent">Tip (%):</label>
+						<input id="tip-percent" type="number" min="0" placeholder="Enter tip (%)" step="1">
+					</div>
+
+					<button type="button" id="btn-calculate">Calculate</button>
+					<button type="button" id="btn-clear">Clear</button>
+				</form>
+			</section>
+
+			<section id="results-section" class="hidden">
+				<h2>Results</h2>
+				
+				<div class="result-row">
+					<span class="result-label">Subtotal</span>
+					<span class="result-value" id="result-subtotal">$0.00</span>
+				</div>
+
+				<div class="result-row">
+					<span class="result-label" id="label-tip">Tip (%)</span>
+					<span class="result-value" id="result-tip">$0.00</span>
+				</div>
+
+				<div class="result-row">
+					<span class="result-label">Total</span>
+					<span class="result-value" id="result-total">$0.00</span>
+				</div>
+
+				<div class="result-row">
+					<span class="result-label">Each person pays</span>
+					<span class="result-highlight" id="result-per-person">$0.00</span>
+				</div>
+			</section>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>

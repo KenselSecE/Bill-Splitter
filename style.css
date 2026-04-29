@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Nunito:wght@400;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--color-bg: #FDF6EC;
+	--color-accent: #E07A5F;
+	--color-text: #3D2B1F;
+	--color-receipt: #FAFAFA;
+	--font-main: 'Nunito', sans-serif;
+	--font-receipt: 'Courier Prime', monospace;
+}
+
+body {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	font-family: var(--font-main);
+}
+
+.container {
+	max-width: 420px;
+	margin: 0 auto;
+	padding: 24px 20px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.app-header {
+	text-align: center;
+	padding: 16px 0;
+}
+
+.app-header h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--color-accent);
+	margin-bottom: 8px;
+}
+
+.app-header p {
+	font-size: 0.95rem;
+	line-height: 1.5;
+	opacity: 0.8;
+}
+
+/* Form section */
+#input-section {
+	background-color: white;
+	border-radius: 16px;
+	padding: 24px;
+	box-shadow: 0 2px 12px rgba(61, 43, 31, 0.08);
+}
+
+/* Each label n Input group */
+.input-form {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin-bottom: 16px;
+}
+
+label {
+	font-size: 0.9rem;
+	font-weight: 600;
+	opacity: 0.75;
+}
+
+input {
+	padding: 12px 14px;
+	border: 2px solid #EDE0D4;
+	border-radius: 10px;
+	font-size: 1rem;
+	font-family: var(--font-main);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	outline: none;
+	transition: border-color 0.2s;
+}
+
+input:focus {
+	border-color: var(--color-accent);
+}
+
+/* Calculate button */
+button {
+	width: 100%;
+	padding: 14px;
+	margin-top: 8px;
+	background-color: var(--color-accent);
+	color: white;
+	border: none;
+	border-radius: 10px;
+	font-size: 1rem;
+	font-family: var(--font-main);
+	font-weight: 700;
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
+button:hover {
+	opacity: 0.88;
+}
+
+#btn-clear {
+	background-color: transparent;
+	color: var(--color-accent);
+	border: 2px solid var(--color-accent);
+	margin-top: 8px;
+}
+
+/* Receipt container */
+#results-section {
+	background-color: var(--color-receipt);
+	border-radius: 4px;
+	padding: 24px 20px;
+	font-family: var(--font-receipt);
+	box-shadow: 0 2px 12px rgba(61, 43, 31, 0.08);
+
+	/* Torn paper effect top n botton */
+	border-top: 3px dashed #D9C5B2;
+	border-bottom: 3px dashed #D9C5B2;
+
+	animation: slideDown 0.4s ease;
+	transition: opacity 0.3s ease;
+}
+
+/* Receipt tile */
+#results-section h2 {
+	text-align: center;
+	font-family: var(--font-receipt);
+	font-size: 1rem;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	opacity: 0.5;
+}
+
+/* Each row */
+.result-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 0;
+	border-bottom: 1px dashed #D9C5B2;
+	font-size: 0.95rem;
+}
+
+/* Divider before "each person pays" */
+.result-row:last-child {
+	border-bottom: none;
+	margin-top: 12px;
+	padding-top: 16px;
+	border-top: 2px dashed var(--color-accent);
+}
+
+/* Star result  each person pays */
+.result-highlight {
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: var(--color-accent);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-12px);
+	}
+}
+
+.error-msg {
+	font-size: 0.8rem;
+	color: #E07A5F;
+	min-height: 16px;
+}
