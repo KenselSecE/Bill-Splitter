@@ -26,7 +26,7 @@ A simple and mobile-friendly web app to split a bill equitably among a group of 
 
 ## Live Demo
 
-[https://kenselsece.github.io/Bill-Splitter/](#)
+[Bill Splitter](https://kenselsece.github.io/Bill-Splitter/)
 
 ## Author
 
