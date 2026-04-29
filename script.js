@@ -22,7 +22,7 @@ clearBtn.addEventListener('click', function() {
 	document.getElementById('error-people').textContent = '';
 
 	//hide reciept
-	hideReciept();
+	hideReceipt();
 });
 
 // listen for the button click
@@ -51,7 +51,7 @@ calculateBtn.addEventListener('click', function() {
 	}
 
 	if (hasError) {
-		hideReciept();
+		hideReceipt();
 		return;
 	}
 
